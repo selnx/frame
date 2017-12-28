@@ -16,6 +16,7 @@ use App\Container\Container;
 use App\Container\PayBill;
 use App\Core\App;
 use app\tests\MyHelloWorld;
+use DBFacade;
 use DesignPatterns\Behavioral\Strategy\DateComparator;
 use DesignPatterns\Behavioral\Strategy\IdComparator;
 use DesignPatterns\Behavioral\Strategy\ObjectCollection;
@@ -94,6 +95,8 @@ class PagesController
 //        var_dump($constructor);
 //
 //        var_dump($dependencies);
+
+        DBFacade::Write('nothing');
 
         $app = new Container();
         $app->bind("Pay", "App\Container\Alipay");//Pay 为接口， Alipay 是 class Alipay \App\Container\Alipay
